@@ -18,7 +18,7 @@
 *.zip
 *.tar.gz
 *.rar
-*/target
+*.target
 *.settings
 *.allure reports
 *.extent reports
