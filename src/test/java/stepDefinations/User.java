@@ -281,12 +281,13 @@ public class User extends TestBase{
 	}
 
 	@Then("^Confirm dialog box should be displayed with Text \"(.*)\" , button with text No , the button with text yes and close icon$")
-	public void confirm_dialog_box_should_be_displayed_with_text_button_with_text_no_the_button_with_text_yes_and_close_x_icon(String cfmDialogBox) {
+	public void confirm_dialog_box_should_be_displayed_with_text_button_with_text_no_the_button_with_text_yes_and_close_icon1(String cfmDialogBox) {
 		
-		cfmDialogBox = UserPage.confirmDilogBx();
-		Assert.assertEquals(UserPage.confirmDilogBx(), "Are you sure you want to delete the selected Admin/User/Staffs?");
+		String cfmDialogBoxMessage = UserPage.confirmDilogBxMessage(cfmDialogBox);
+		Assert.assertEquals(cfmDialogBoxMessage,cfmDialogBox);
 		
 	}
+		
 
 	@Given("Admin\\/User\\/Staff is in confirm dialog box after clicking delete icon")
 	public void admin_user_staff_is_in_confirm_dialog_box_after_clicking_delete_icon(String cfmDialogBox) {
@@ -321,10 +322,6 @@ public class User extends TestBase{
 	}
 
 
-	@Then("^Admin\\/User\\/Staff see the Search Text box has text as \"(.*)$")
-	public void admin_user_staff_see_the_search_text_box_has_text_as(String searchTxt) {
-	    UserPage.search(searchTxt);
-	}
 
 	@Then("Admin\\/User\\/Staff should see the search input field with search icon and text as Search")
 	public void admin_user_staff_should_see_the_search_input_field_with_search_icon_and_text_as_search() {
@@ -365,12 +362,6 @@ public class User extends TestBase{
 	    UserPage.DeleteBtnClick();
 	}
 
-	@Then("^Confirm dialog box should be displayed with Text \"(.*) , button with text No , the button with text yes and close icon$")
-	public void confirm_dialog_box_should_be_displayed_with_text_button_with_text_no_the_button_with_text_yes_and_close_icon(String cfmDialogBox) {
-		cfmDialogBox = UserPage.confirmDilogBx();
-		Assert.assertEquals(UserPage.confirmDilogBx(), "Are you sure you want to delete the selected Admin/User/Staffs?");
-		
-	}
 
 
 	@Then("User Details dialog box should be displayed for editing")

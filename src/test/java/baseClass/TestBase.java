@@ -21,7 +21,7 @@ public class TestBase {
 		
 		try {
 			prop = new Properties();
-			FileInputStream fis = new FileInputStream("/Users/Arivoli/eclipse-workspace/LMS-20221128T034204Z-001/LMS/Configuration/config.properties");
+			FileInputStream fis = new FileInputStream("Configuration/config.properties");
 				prop.load(fis);
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
@@ -33,19 +33,19 @@ public class TestBase {
 		
 		if(browserName.equalsIgnoreCase("chrome")) {
 			
-			System.setProperty("webdriver.chrome.driver","/Users/Arivoli/eclipse-workspace/LMS-20221128T034204Z-001/LMS/src/test/resources/Driver/chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver","src/test/resources/Driver/chromedriver.exe");
 			driver=new ChromeDriver();
 		}
 		
 		else if(browserName.equalsIgnoreCase("firefox")) {
 			
-			System.setProperty("webdriver.gecko.driver","/Users/Arivoli/eclipse-workspace/LMS-20221128T034204Z-001/LMS/src/test/resources/Driver/geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver","src/test/resources/Driver/geckodriver.exe");
 			driver=new FirefoxDriver();
 		}
 		
 		else if (browserName.equalsIgnoreCase("edge")) {
 			
-			System.setProperty("webdriver.edge.driver","/Users/Arivoli/eclipse-workspace/LMS-20221128T034204Z-001/LMS/src/test/resources/Drivermsedgedriver.exe");
+			System.setProperty("webdriver.edge.driver","src/test/resources/Drivermsedgedriver.exe");
 			driver=new EdgeDriver();
 		}
 		

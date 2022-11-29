@@ -529,14 +529,14 @@ public void AddNewAddressField2() {
 		 List<WebElement> allOptionsElement = dropdown.getOptions();
 		 
 		 // Creating a list to store drop down options
-		 List options = new ArrayList();
+		 List<String> options = new ArrayList<String>();
 		 
 		 for(WebElement optionElement : allOptionsElement)
 		    {
 		        options.add(optionElement.getText());
 		    }
 		// Creating a temp list to sort
-		    List tempList = new ArrayList(options);
+		    List<String> tempList = new ArrayList<String>(options);
 
 		    Collections.sort(tempList);
 
@@ -550,6 +550,19 @@ public void AddNewAddressField2() {
 		    }
 		    else
 		        System.out.println("List is not sorted.");
+}
+
+	public String confirmDilogBxMessage(String text) {
+
+		return Message2.getText();
 
 	}
+
+
+
+
 }
+
+
+
+
